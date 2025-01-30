@@ -1,0 +1,16 @@
+body {
+  background-image: url('C:/Users/LMOTT/Documents/Welcome Lobby Table/vscode/Table Background.png');
+  background-repeat: no-repeat;
+  min-height: 100%;
+  background-size: cover;
+}
+.rover {
+  position: absolute;
+  left: 40%;
+  top: 10%;
+}
+.buttons {
+    position: absolute;
+    left: 20%;
+    top: 30%;
+}

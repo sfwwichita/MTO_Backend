@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Confirmation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+    body {
+      background-image: url('../static/Table Background Confirmation.png');
+      background-color: black;
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .check1 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 49.05%;
+      display: block;
+      z-index: 1;
+    }
+    .check2 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 54.59%;
+      display: block;
+      z-index: 1;
+    }
+    .check3 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 60.15%;
+      display: block;
+      z-index: 1;
+    }
+    .check4 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 65.79%;
+      display: block;
+      z-index: 1;
+    }
+ .home {
+      height: 5.5556%;
+      width: 3.125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.417%;
+      left: 1.9375%;
+      z-index: 1;
+    }
+    .popup {
+      height: 12.7222%;
+      width: 35.391%;
+      background-color: transparent;
+      border-color: transparent;
+      z-index: 1;
+      color: white;
+      display: block;
+      font-size: 3.7969vw;
+      position: absolute;
+      top: 37.778%;
+      left: 43.344%;
+    }
+    .redirect {
+      height: 9.7222%;
+      width: 25.391%;
+      border-radius: 9.2308%/42.857%;
+      background-color: black;
+      border-color: white;
+      z-index: 1;
+      color: white;
+      display: block;
+      font-size: 1.7969vw;
+      position: absolute;
+      top: 73.078%;
+      left: 48.244%;
+    }
+  </style>
+</head>
+  <body>
+    <!-- Check1 -->
+      <img id="Check1" src='../static/Check.png' alt="Check1" class="check1" />
+    <!-- Check2 -->
+      <img id="Check2" src='../static/Check.png' alt="Check2" class="check2" />
+    <!-- Check3 -->
+      <img id="Check3" src='../static/Check.png' alt="Check3" class="check3" />
+    <!-- Check4 -->
+      <img id="Check4" src='../static/Check.png' alt="Check4" class="check4" />
+    <!-- Home Page Button -->
+      <button id="Home Page" onclick="document.location='Table_Page.html'" class="home"></button>
+    <!-- Confirmation Pop Up -->
+      <button id="Confirmation" class="popup">Your Rover Kit Has Been Successfully Submitted</button>
+    <!-- Redirect to Home -->
+      <button id="Redirect" onclick="document.location='Table_Page.html'" class="redirect">Back to Home</button>
+  </body>
+</html>

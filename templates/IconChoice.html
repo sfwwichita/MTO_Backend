@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Icon Choice</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+    body {
+      background-image: url('../static/Table Background.png');
+      background-color: black;
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+.pointer {
+      height: 6.25%;
+      position: absolute;
+      left: 21.9%;
+      top: 53%;
+      display: block;
+      z-index: 1;
+    }
+    .check {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 49%;
+      display: block;
+      z-index: 1;
+    }
+    .next {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 20.922%;
+      z-index: 1;
+    }
+    .back {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 17.40625%;
+      z-index: 1;
+    }
+    .home {
+      height: 5.5556%;
+      width: 3.125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.417%;
+      left: 1.9375%;
+      z-index: 1;
+    }
+    .rover {
+      height: 69.444%;
+      position: absolute;
+      left: 65%;
+      top: 23%;
+      z-index: 0;
+      display: none;
+    }
+    .prompt {
+      position: absolute;
+      top: 25.694%;
+      left: 28.559%;
+      height: 4.2667%;
+      z-index: 1;
+      display: 'block';
+    }
+    .unselect {
+      height: 5.5556%;
+      width: 23.4375%;
+      border-radius: 9%/90%;
+      background-color: black;
+      border-color: white;
+      z-index: 1;
+      color: white;
+      display: block;
+    }
+    .select {
+      height: 5.5556%;
+      width: 23.4375%;
+      border-radius: 9%/90%;
+      background-color: white;
+      border-color: white;
+      z-index: 1;
+      color: black;
+      display: block;
+    }
+    .pos1 {
+      position: absolute;
+      top: 31.944%;
+      left: 32.731%;
+    }
+    .pos2 {
+        position: absolute;
+        top: 39.583%;
+        left: 32.731%;
+    }
+    .pos3 {
+      position: absolute;
+      top: 47.222%;
+      left: 32.731%;
+    }
+    .pos4 {
+      position: absolute;
+      top: 54.861%;
+      left: 32.731%;
+    }
+    .pos5 {
+      position: absolute;
+      top: 62.5%;
+      left: 32.731%;
+    }
+    .pos6 {
+      position: absolute;
+      top: 70.139%;
+      left: 32.731%;
+    }
+    .pos7 {
+      position: absolute;
+      top: 77.778%;
+      left: 32.731%;
+    }
+    .pos8 {
+      position: absolute;
+      top: 85.417%;
+      left: 32.731%;
+    }
+    .sector {
+        position: absolute;
+        display: none;
+    }
+    .etch {
+        height: 9.7222%;
+        position: absolute;
+        top: 32.45%;
+        left: 78.378%;
+        display: none;
+    }
+    .bti {
+        height: 2.7778%;
+        width: 9.375%;
+        border-radius: 22.5%/135%;
+        position: absolute;
+        top: 20.833%;
+        left: 54.6875%;
+        display: block;
+        background-color: black;
+        border-color: white;
+        z-index: 1;
+        color: white;
+        display: block;
+    }
+
+    /* Transitions */
+    .transition-1 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 101;
+      background-color: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.01s ease-out;
+    } 
+
+    .transition-1.is-active {
+      opacity: 1;
+      pointer-events: all;
+    } 
+  </style>
+</head>
+</html>
+<body>
+
+    <div class="transition transition-1 is-active"></div>
+
+    
+
+  
+  <!-- Pointer -->
+     <img id="Pointer" src='../static/Pointer.png' alt="Pointer" class="pointer" />
+  <!-- Check -->
+     <img id="Check" src='../static/Check.png' alt="Check" class="check" />
+  <!-- Next Page Button -->
+     <a id="Next Page" href="Options.html" class="next"></a>
+  <!-- Back Page Button -->
+     <a href="MTOdesign.html" class="back"></a>
+  <!-- Home Page Button -->
+     <button id="Home Page" onclick="document.location='MTOdesign.html'" class="home"></button>
+  <!-- Back to Industry -->
+     <button id="BTI" class="sector">Back to Industry</button>
+  <!-- Industry 1 -->
+     <button id="Industry 1" class="unselect pos1">Consumer</button>
+  <!-- Industry 2 -->
+     <button id="Industry 2" class="unselect pos2">Energy, Resources & Industrials</button>
+  <!-- Industry 3 -->
+     <button id="Industry 3" class="unselect pos3">Financial Services</button>
+  <!-- Industry 4 -->
+     <button id="Industry 4" class="unselect pos4">Government & Public Services</button>
+  <!-- Industry 5 -->
+     <button id="Industry 5" class="unselect pos5">Life Sciences & Health Care</button>
+  <!-- Industry 6 -->
+     <button id="Industry 6" class="unselect pos6">Technology, Media & Telecommunications</button>
+  <!-- Sector 1a -->
+     <button id="Sector 1a" class="sector pos1">Automotive</button>
+  <!-- Sector 1b -->
+     <button id="Sector 1b" class="sector pos2">Consumer Products</button>
+  <!-- Sector 1c -->
+     <button id="Sector 1c" class="sector pos3">Retail</button>
+  <!-- Sector 1d -->
+     <button id="Sector 1d" class="sector pos4">Transportation</button>
+  <!-- Sector 1e -->
+     <button id="Sector 1e" class="sector pos5">Hospitality & Services</button>
+  <!-- Sector 1f-->
+     <button id="Sector 1f" class="sector pos6">Wholesale & Distribution</button>
+  <!-- Sector 2a-->
+     <button id="Sector 2a" class="sector pos1">Industrial Products</button>
+  <!-- Sector 2b-->
+     <button id="Sector 2b" class="sector pos2">Construction</button>
+  <!-- Sector 2c-->
+     <button id="Sector 2c" class="sector pos3">Power</button>
+  <!-- Sector 2d-->
+     <button id="Sector 2d" class="sector pos4">Gas & Chemicals</button>
+  <!-- Sector 2e-->
+     <button id="Sector 2e" class="sector pos5">Oil</button>
+  <!-- Sector 2f-->
+     <button id="Sector 2f" class="sector pos6">Renewables & Energy</button>
+  <!-- Sector 2g-->
+     <button id="Sector 2g" class="sector pos7">Utilities</button>
+  <!-- Sector 2h-->
+     <button id="Sector 2h" class="sector pos8">Mining & Metals</button>
+  <!-- Sector 3a-->
+     <button id="Sector 3a" class="sector pos1">Banking & Capital Markets</button>
+  <!-- Sector 3b-->
+     <button id="Sector 3b" class="sector pos2">Insurance</button>
+  <!-- Sector 3c-->
+     <button id="Sector 3c" class="sector pos3">Investment Management</button>
+  <!-- Sector 3d-->
+     <button id="Sector 3d" class="sector pos4">Real Estate</button>
+  <!-- Sector 4a -->
+     <button id="Sector 4a" class="sector pos1">Civil, State & Local Government</button>
+  <!-- Sector 4b -->
+     <button id="Sector 4b" class="sector pos2">Justice</button>
+  <!-- Sector 4c -->
+     <button id="Sector 4c" class="sector pos3">Defense & Security</button>
+  <!-- Sector 4d -->
+     <button id="Sector 4d" class="sector pos4">Health & Human Services</button>
+  <!-- Sector 4e -->
+     <button id="Sector 4e" class="sector pos5">International Donor Organizations</button>
+  <!-- Sector 4f-->
+     <button id="Sector 4f" class="sector pos6">Higher Education</button>
+  <!-- Sector 5a -->
+     <button id="Sector 5a" class="sector pos1">Health Care Providers</button>
+  <!-- Sector 5b -->
+     <button id="Sector 5b" class="sector pos2">Health Plans</button>
+  <!-- Sector 5c -->
+     <button id="Sector 5c" class="sector pos3">Life Sciences</button>
+  <!-- Sector 6a -->
+     <button id="Sector 6a" class="sector pos1">Technology</button>
+  <!-- Sector 6b -->
+     <button id="Sector 6b" class="sector pos2">Media & Entertainment</button>
+  <!-- Sector 6c -->
+     <button id="Sector 6c" class="sector pos3">Telecommunications</button>
+  <!-- Red Rover -->
+     <img id="Red Rover" src='../static/Rover Top View - Red.png' alt="Red Rover" class="rover"/>
+  <!-- Orange Rover -->
+     <img id="Orange Rover" src='../static/Rover Top View - Orange.png' alt="Orange Rover" class="rover"/>
+  <!-- Green Rover -->
+     <img id="Green Rover" src='../static/Rover Top View - Green.png' alt="Green Rover" class="rover"/>
+  <!-- Blue Rover -->
+     <img id="Blue Rover" src='../static/Rover Top View - Blue.png' alt="Blue Rover" class="rover"/>
+  <!-- Black Rover -->
+     <img id="Black Rover" src='../static/Rover Top View - Black.png' alt="Black Rover" class="rover"/>
+  <!-- Industry Prompt -->
+     <img id="Industry Prompt" src='../static/Industry Prompt.png' alt="Industry Prompt" class="prompt"/>
+  <!-- Sector Prompt -->
+     <img id="Sector Prompt" src='../static/Sector Prompt.png' alt="Sector Prompt" class="prompt"/>
+  <!-- Image 1a -->
+     <img id="Image 1a" src="../static/Image1a.png" alt="Automotive" class="etch"/>
+  <!-- Image 1b -->
+     <img id="Image 1b" src="../static/Image1b.png" alt="Consumer Products" class="etch"/>
+  <!-- Image 1c -->
+     <img id="Image 1c" src="../static/Image1c.png" alt="Retail" class="etch"/>
+  <!-- Image 1d -->
+     <img id="Image 1d" src="../static/Image1d.png" alt="Transportation" class="etch"/>
+  <!-- Image 1e -->
+     <img id="Image 1e" src="../static/Image1e.png" alt="Hospitality & Services" class="etch"/>
+  <!-- Image 1f -->
+     <img id="Image 1f" src="../static/Image1f.png" alt="Wholesale & Distribution" class="etch"/>
+  <!-- Image 2a -->
+     <img id="Image 2a" src="../static/Image2a.png" alt="Industrial Products" class="etch"/>
+  <!-- Image 2b -->
+     <img id="Image 2b" src="../static/Image2b.png" alt="Construction" class="etch"/>
+  <!-- Image 2c -->
+     <img id="Image 2c" src="../static/Image2c.png" alt="Power" class="etch"/>
+  <!-- Image 2d -->
+     <img id="Image 2d" src="../static/Image2d.png" alt="Gas & Chemicals" class="etch"/>
+  <!-- Image 2e -->
+     <img id="Image 2e" src="../static/Image2e.png" alt="Oil" class="etch"/>
+  <!-- Image 2f -->
+     <img id="Image 2f" src="../static/Image2f.png" alt="Renewables & Energy" class="etch"/>
+  <!-- Image 2g -->
+     <img id="Image 2g" src="../static/Image2g.png" alt="Utilities" class="etch"/>
+  <!-- Image 2h -->
+     <img id="Image 2h" src="../static/Image2h.png" alt="Mining & Metals" class="etch"/>
+  <!-- Image 3a -->
+     <img id="Image 3a" src="../static/Image3a.png" alt="Banking & Capital Markets" class="etch"/>
+  <!-- Image 3b -->
+     <img id="Image 3b" src="../static/Image3b.png" alt="Insurance" class="etch"/>
+  <!-- Image 3c -->
+     <img id="Image 3c" src="../static/Image3c.png" alt="Investment Management" class="etch"/>
+  <!-- Image 3d -->
+     <img id="Image 3d" src="../static/Image3d.png" alt="Real Estate" class="etch"/>
+  <!-- Image 4a -->
+     <img id="Image 4a" src="../static/Image4a.png" alt="Civil, State & Local Government" class="etch"/>
+  <!-- Image 4b -->
+     <img id="Image 4b" src="../static/Image4b.png" alt="Justice" class="etch"/>
+  <!-- Image 4c -->
+     <img id="Image 4c" src="../static/Image4c.png" alt="Defense & Security" class="etch"/>
+  <!-- Image 4d -->
+     <img id="Image 4d" src="../static/Image4d.png" alt="Health & Human Services" class="etch"/>
+  <!-- Image 4e -->
+     <img id="Image 4e" src="../static/Image4e.png" alt="International Donor Organizations" class="etch"/>
+  <!-- Image 4f -->
+     <img id="Image 4f" src="../static/Image4f.png" alt="Higher Education" class="etch"/>
+  <!-- Image 5a -->
+     <img id="Image 5a" src="../static/Image5a.png" alt="Health Care Providers" class="etch"/>
+  <!-- Image 5b -->
+     <img id="Image 5b" src="../static/Image5b.png" alt="Health Plans" class="etch"/>
+  <!-- Image 5c -->
+     <img id="Image 5c" src="../static/Image5c.png" alt="Life Sciences" class="etch"/>
+  <!-- Image 6a -->
+     <img id="Image 6a" src="../static/Image6a.png" alt="Technology" class="etch"/>
+  <!-- Image 6b -->
+     <img id="Image 6b" src="../static/Image6b.png" alt="Media & Entertainment" class="etch"/>
+  <!-- Image 6c -->
+     <img id="Image 6c" src="../static/Image6c.png" alt="Telecommunications" class="etch"/>
+
+  <script>
+      /* Rover Color Display */
+     var RedRover=document.getElementById('Red Rover');
+     var OrangeRover=document.getElementById('Orange Rover');
+     var GreenRover=document.getElementById('Green Rover');
+     var BlueRover=document.getElementById('Blue Rover');
+     var BlackRover=document.getElementById('Black Rover');
+     let Color = sessionStorage.getItem('color');
+     if (Color === 'Red') {
+        RedRover.style.display = 'block';
+     } else if (Color === "Orange") {
+        OrangeRover.style.display = 'block';
+     } else if (Color === "Green") {
+        GreenRover.style.display = 'block';
+     } else if (Color === "Blue") {
+        BlueRover.style.display = 'block';
+     } else {
+        BlackRover.style.display = 'block';
+     }
+     sessionStorage.setItem('icon','none');
+     /* Title Images */
+     var InudstryPrompt=document.getElementById('Industry Prompt');
+     var SectorPrompt=document.getElementById('Sector Prompt');
+     SectorPrompt.style.display = 'none';
+     /* Icon Images */
+     var Image1a=document.getElementById('Image 1a');
+     var Image1b=document.getElementById('Image 1b');
+     var Image1c=document.getElementById('Image 1c');
+     var Image1d=document.getElementById('Image 1d');
+     var Image1e=document.getElementById('Image 1e');
+     var Image1f=document.getElementById('Image 1f');
+     var Image2a=document.getElementById('Image 2a');
+     var Image2b=document.getElementById('Image 2b');
+     var Image2c=document.getElementById('Image 2c');
+     var Image2d=document.getElementById('Image 2d');
+     var Image2e=document.getElementById('Image 2e');
+     var Image2f=document.getElementById('Image 2f');
+     var Image2g=document.getElementById('Image 2g');
+     var Image2h=document.getElementById('Image 2h');
+     var Image3a=document.getElementById('Image 3a');
+     var Image3b=document.getElementById('Image 3b');
+     var Image3c=document.getElementById('Image 3c');
+     var Image3d=document.getElementById('Image 3d');
+     var Image4a=document.getElementById('Image 4a');
+     var Image4b=document.getElementById('Image 4b');
+     var Image4c=document.getElementById('Image 4c');
+     var Image4d=document.getElementById('Image 4d');
+     var Image4e=document.getElementById('Image 4e');
+     var Image4f=document.getElementById('Image 4f');
+     var Image5a=document.getElementById('Image 5a');
+     var Image5b=document.getElementById('Image 5b');
+     var Image5c=document.getElementById('Image 5c');
+     var Image6a=document.getElementById('Image 6a');
+     var Image6b=document.getElementById('Image 6b');
+     var Image6c=document.getElementById('Image 6c');
+     /* Establish Buttons */
+     var Industry1=document.getElementById('Industry 1');
+     var Industry2=document.getElementById('Industry 2');
+     var Industry3=document.getElementById('Industry 3');
+     var Industry4=document.getElementById('Industry 4');
+     var Industry5=document.getElementById('Industry 5');
+     var Industry6=document.getElementById('Industry 6');
+     var BTI=document.getElementById('BTI');
+     var Sector1a=document.getElementById('Sector 1a');
+     var Sector1b=document.getElementById('Sector 1b');
+     var Sector1c=document.getElementById('Sector 1c');
+     var Sector1d=document.getElementById('Sector 1d');
+     var Sector1e=document.getElementById('Sector 1e');
+     var Sector1f=document.getElementById('Sector 1f');
+     var Sector2a=document.getElementById('Sector 2a');
+     var Sector2b=document.getElementById('Sector 2b');
+     var Sector2c=document.getElementById('Sector 2c');
+     var Sector2d=document.getElementById('Sector 2d');
+     var Sector2e=document.getElementById('Sector 2e');
+     var Sector2f=document.getElementById('Sector 2f');
+     var Sector2g=document.getElementById('Sector 2g');
+     var Sector2h=document.getElementById('Sector 2h');
+     var Sector3a=document.getElementById('Sector 3a');
+     var Sector3b=document.getElementById('Sector 3b');
+     var Sector3c=document.getElementById('Sector 3c');
+     var Sector3d=document.getElementById('Sector 3d');
+     var Sector4a=document.getElementById('Sector 4a');
+     var Sector4b=document.getElementById('Sector 4b');
+     var Sector4c=document.getElementById('Sector 4c');
+     var Sector4d=document.getElementById('Sector 4d');
+     var Sector4e=document.getElementById('Sector 4e');
+     var Sector4f=document.getElementById('Sector 4f');
+     var Sector5a=document.getElementById('Sector 5a');
+     var Sector5b=document.getElementById('Sector 5b');
+     var Sector5c=document.getElementById('Sector 5c');
+     var Sector6a=document.getElementById('Sector 6a');
+     var Sector6b=document.getElementById('Sector 6b');
+     var Sector6c=document.getElementById('Sector 6c');
+     var Next=document.getElementById('Next Page');
+     /* Industry 1 */
+     Industry1.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image1a, Image1b, Image1c, Image1d, Image1e, Image1f].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector1a.onclick = function () {
+          [Image1b, Image1c, Image1d, Image1e, Image1f].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1a.style.display= 'block';
+          Sector1a.className = "select pos1";
+          sessionStorage.setItem('icon','1a');
+        }
+        Sector1b.onclick = function () {
+          [Image1a, Image1c, Image1d, Image1e, Image1f].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1b.style.display= 'block';
+          Sector1b.className = "select pos2";
+          sessionStorage.setItem('icon','1b');
+        }
+        Sector1c.onclick = function () {
+          [Image1a, Image1b, Image1d, Image1e, Image1f].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1c.style.display= 'block';
+          Sector1c.className = "select pos3";
+          sessionStorage.setItem('icon','1c');
+        }
+        Sector1d.onclick = function () {
+          [Image1a, Image1b, Image1c, Image1e, Image1f].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1d.style.display= 'block';
+          Sector1d.className = "select pos4";
+          sessionStorage.setItem('icon','1d');
+        }
+        Sector1e.onclick = function () {
+          [Image1a, Image1b, Image1c, Image1d, Image1f].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1e.style.display= 'block';
+          Sector1e.className = "select pos5";
+          sessionStorage.setItem('icon','1e');
+        }
+        Sector1f.onclick = function () {
+          [Image1a, Image1b, Image1c, Image1d, Image1e].forEach(i=>{i.style.display='none';});
+          [Sector1a, Sector1b, Sector1c, Sector1d, Sector1e, Sector1f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image1f.style.display= 'block';
+          Sector1f.className = "select pos6";
+          sessionStorage.setItem('icon','1f');
+        }
+     }
+     /* Industry 2 */
+     Industry2.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image2a, Image2b, Image2c, Image2d, Image2e, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector2a.onclick = function () {
+          [Image2b, Image2c, Image2d, Image2e, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2a.style.display= 'block';
+          Sector2a.className = "select pos1";
+          sessionStorage.setItem('icon','2a');
+        }
+        Sector2b.onclick = function () {
+          [Image2a, Image2c, Image2d, Image2e, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2b.style.display= 'block';
+          Sector2b.className = "select pos2";
+          sessionStorage.setItem('icon','2b');
+        }
+        Sector2c.onclick = function () {
+          [Image2a, Image2b, Image2d, Image2e, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2c.style.display= 'block';
+          Sector2c.className = "select pos3";
+          sessionStorage.setItem('icon','2c');
+        }
+        Sector2d.onclick = function () {
+          [Image2a, Image2b, Image2c, Image2e, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2d.style.display= 'block';
+          Sector2d.className = "select pos4";
+          sessionStorage.setItem('icon','2d');
+        }
+        Sector2e.onclick = function () {
+          [Image2a, Image2b, Image2c, Image2d, Image2f, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2e.style.display= 'block';
+          Sector2e.className = "select pos5";
+          sessionStorage.setItem('icon','2e');
+        }
+        Sector2f.onclick = function () {
+          [Image2a, Image2b, Image2c, Image2d, Image2e, Image2g, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2f.style.display= 'block';
+          Sector2f.className = "select pos6";
+          sessionStorage.setItem('icon','2f');
+        }
+        Sector2g.onclick = function () {
+          [Image2a, Image2b, Image2c, Image2d, Image2e, Image2f, Image2h].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2g.style.display= 'block';
+          Sector2g.className = "select pos7";
+          sessionStorage.setItem('icon','2g');
+        }
+        Sector2h.onclick = function () {
+          [Image2a, Image2b, Image2c, Image2d, Image2e, Image2f, Image2g].forEach(i=>{i.style.display='none';});
+          [Sector2a, Sector2b, Sector2c, Sector2d, Sector2e, Sector2f, Sector2g, Sector2h].forEach(i=>{i.classList.replace('select','unselect');});
+          Image2h.style.display= 'block';
+          Sector2h.className = "select pos8";
+          sessionStorage.setItem('icon','2h');
+        }
+     }
+      /* Industry 3 */
+      Industry3.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image3a, Image3b, Image3c, Image3d].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector3a.onclick = function () {
+          [Image3b, Image3c, Image3d].forEach(i=>{i.style.display='none';});
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('select','unselect');});
+          Image3a.style.display= 'block';
+          Sector3a.className = "select pos1";
+          sessionStorage.setItem('icon','3a');
+        }
+        Sector3b.onclick = function () {
+          [Image3a, Image3c, Image3d].forEach(i=>{i.style.display='none';});
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('select','unselect');});
+          Image3b.style.display= 'block';
+          Sector3b.className = "select pos2";
+          sessionStorage.setItem('icon','3b');
+        }
+        Sector3c.onclick = function () {
+          [Image3a, Image3b, Image3d].forEach(i=>{i.style.display='none';});
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('select','unselect');});
+          Image3c.style.display= 'block';
+          Sector3c.className = "select pos3";
+          sessionStorage.setItem('icon','3c');
+        }
+        Sector3d.onclick = function () {
+          [Image3a, Image3b, Image3c,].forEach(i=>{i.style.display='none';});
+          [Sector3a, Sector3b, Sector3c, Sector3d].forEach(i=>{i.classList.replace('select','unselect');});
+          Image3d.style.display= 'block';
+          Sector3d.className = "select pos4";
+          sessionStorage.setItem('icon','3d');
+        }
+     }
+     /* Industry 4 */
+     Industry4.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image4a, Image4b, Image4c, Image4d, Image4e, Image4f].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector4a.onclick = function () {
+          [Image4b, Image4c, Image4d, Image4e, Image4f].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4a.style.display= 'block';
+          Sector4a.className = "select pos1";
+          sessionStorage.setItem('icon','4a');
+        }
+        Sector4b.onclick = function () {
+          [Image4a, Image4c, Image4d, Image4e, Image4f].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4b.style.display= 'block';
+          Sector4b.className = "select pos2";
+          sessionStorage.setItem('icon','4b');
+        }
+        Sector4c.onclick = function () {
+          [Image4a, Image4b, Image4d, Image4e, Image4f].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4c.style.display= 'block';
+          Sector4c.className = "select pos3";
+          sessionStorage.setItem('icon','4c');
+        }
+        Sector4d.onclick = function () {
+          [Image4a, Image4b, Image4c, Image4e, Image4f].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4d.style.display= 'block';
+          Sector4d.className = "select pos4";
+          sessionStorage.setItem('icon','4d');
+        }
+        Sector4e.onclick = function () {
+          [Image4a, Image4b, Image4c, Image4d, Image4f].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4e.style.display= 'block';
+          Sector4e.className = "select pos5";
+          sessionStorage.setItem('icon','4e');
+        }
+        Sector4f.onclick = function () {
+          [Image4a, Image4b, Image4c, Image4d, Image4e].forEach(i=>{i.style.display='none';});
+          [Sector4a, Sector4b, Sector4c, Sector4d, Sector4e, Sector4f].forEach(i=>{i.classList.replace('select','unselect');});
+          Image4f.style.display= 'block';
+          Sector4f.className = "select pos6";
+          sessionStorage.setItem('icon','4f');
+        }
+     }
+     /* Industry 5 */
+     Industry5.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image5a, Image5b, Image5c].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector5a.onclick = function () {
+          [Image5b, Image5c].forEach(i=>{i.style.display='none';});
+          [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image5a.style.display= 'block';
+          Sector5a.className = "select pos1";
+          sessionStorage.setItem('icon','5a');
+        }
+        Sector5b.onclick = function () {
+          [Image5a, Image5c].forEach(i=>{i.style.display='none';});
+          [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image5b.style.display= 'block';
+          Sector5b.className = "select pos2";
+          sessionStorage.setItem('icon','5b');
+        }
+        Sector5c.onclick = function () {
+          [Image5a, Image5b].forEach(i=>{i.style.display='none';});
+          [Sector5a, Sector5b, Sector5c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image5c.style.display= 'block';
+          Sector5c.className = "select pos3";
+          sessionStorage.setItem('icon','5c');
+        }
+     }   
+     /* Industry 6 */
+     Industry6.onclick = function() {
+        [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('unselect','sector');});
+        [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('sector','unselect');});
+        BTI.className = 'bti';
+        InudstryPrompt.style.display = 'none';
+        SectorPrompt.style.display = 'block';
+        BTI.onclick = function () {
+          [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('unselect','sector');});
+          [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('select','sector');});
+          [Industry1, Industry2, Industry3, Industry4, Industry5, Industry6].forEach(i=>{i.classList.replace('sector','unselect');});
+          [Image6a, Image6b, Image6c].forEach(i=>{i.style.display='none';});
+          InudstryPrompt.style.display = 'block';
+          SectorPrompt.style.display = 'none';
+          BTI.className = "sector";
+        } 
+        Sector6a.onclick = function () {
+          [Image6b, Image6c].forEach(i=>{i.style.display='none';});
+          [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image6a.style.display= 'block';
+          Sector6a.className = "select pos1";
+          sessionStorage.setItem('icon','6a');
+        }
+        Sector6b.onclick = function () {
+          [Image6a, Image6c].forEach(i=>{i.style.display='none';});
+          [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image6b.style.display= 'block';
+          Sector6b.className = "select pos2";
+          sessionStorage.setItem('icon','6b');
+        }
+        Sector6c.onclick = function () {
+          [Image6a, Image6b].forEach(i=>{i.style.display='none';});
+          [Sector6a, Sector6b, Sector6c].forEach(i=>{i.classList.replace('select','unselect');});
+          Image6c.style.display= 'block';
+          Sector6c.className = "select pos3";
+          sessionStorage.setItem('icon','6c');
+        }
+     }  
+      /* Transitions */
+      window.onload = () => {
+      const transition_el = document.querySelector('.transition');
+
+      setTimeout( () => {
+        transition_el.classList.remove('is-active');
+      }, 10);
+      }
+
+  </script> 
+</body>

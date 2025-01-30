@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Submit</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+    body {
+      background-image: url('/static/Table Background.png');
+      background-color: black;
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+   .pointer {
+      height: 6.25%;
+      position: absolute;
+      left: 21.9%;
+      top: 64.1%;
+      display: block;
+      z-index: 1;
+    }
+    .check1 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 49%;
+      display: block;
+      z-index: 1;
+    }
+    .check2 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 54.5%;
+      display: block;
+      z-index: 1;
+    }
+    .check3 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 60.1%;
+      display: block;
+      z-index: 1;
+    }
+    .next {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 20.922%;
+      z-index: 1;
+    }
+    .back {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 17.40625%;
+      z-index: 1;
+    }
+    .home {
+      height: 5.5556%;
+      width: 3.125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.417%;
+      left: 1.9375%;
+      z-index: 1;
+    }
+    .rover {
+      height: 62.5%;
+      position: absolute;
+      left: 40%;
+      top: 25%;
+      z-index: 0;
+      display: none;
+    }
+    .submit {
+      height: 9.7222%;
+      width: 25.391%;
+      border-radius: 9.2308%/42.857%;
+      background-color: black;
+      border-color: white;
+      z-index: 1;
+      color: white;
+      display: block;
+      font-size: 1.7969vw;
+      position: absolute;
+      top: 77.778%;
+      left: 27.344%;
+    }
+    .etchbackground {
+        height: 27.778%;
+        width: 15.625%;
+        border-radius: 50%;
+        position: absolute;
+        top: 13.5%;
+        left: 76.672%;
+        display: none;
+    }
+    .etchword {
+      height: 4.8611%;
+      width: 7.8125%;
+      border-radius: 27%/77.143%;
+      background-color: black;
+      border-color: transparent;
+      z-index: 1;
+      color: white;
+      display: block;
+      position: absolute;
+      top: 7.9444%;
+      left: 80.578%;
+    }
+    .etch {
+        height: 9.7222%;
+        position: absolute;
+        top: 22.528%;
+        left: 79.172%;
+        display: none;
+    }
+    /* Transitions */
+    .transition-1 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 101;
+      background-color: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.01s ease-out;
+    } 
+
+    .transition-1.is-active {
+      opacity: 1;
+      pointer-events: all;
+    } 
+  </style>
+</head>
+<body>
+    <div class="transition transition-1 is-active"></div>
+    <!-- Pointer -->
+       <img id="Pointer" src='/static/Pointer.png' alt="Pointer" class="pointer" />
+    <!-- Check1 -->
+       <img id="Check1" src='/static/Check.png' alt="Check1" class="check1" />
+    <!-- Check2 -->
+       <img id="Check2" src='/static/Check.png' alt="Check2" class="check2" />
+    <!-- Check3 -->
+       <img id="Check3" src='/static/Check.png' alt="Check3" class="check3" />
+    <!-- Next Page Button -->
+       <a href="C:\Users\User1\Desktop\MTO\templates\Options.html" class="next"></a>
+    <!-- Back Page Button -->
+       <a href="C:\Users\User1\Desktop\MTO\templates\Options.html" class="back"></a>
+    <!-- Home Page Button -->
+       <button id="Home Page" onclick="document.location='C:\Users\User1\Desktop\MTO\templates\MTOdesign.html'" class="home"></button> 
+    <!-- Red Rover 1-->
+       <img id="Red Rover 1" src='/static/Final Red Rover 1.png' alt="Red Rover 1" class="rover"/>
+    <!-- Red Rover 2-->
+       <img id="Red Rover 2" src='/static/Final Red Rover 2.png' alt="Red Rover 2" class="rover"/>
+    <!-- Red Rover 3-->
+       <img id="Red Rover 3" src='/static/Final Red Rover 3.png' alt="Red Rover 3" class="rover"/>
+    <!-- Red Rover 4-->
+       <img id="Red Rover 4" src='/static/Final Red Rover 4.png' alt="Red Rover 4" class="rover"/>
+    <!-- Orange Rover 1-->
+       <img id="Orange Rover 1" src='/static/Final Orange Rover 1.png' alt="Orange Rover 1" class="rover"/>
+    <!-- Orange Rover 2-->
+       <img id="Orange Rover 2" src='/static/Final Orange Rover 2.png' alt="Orange Rover 2" class="rover"/>
+    <!-- Orange Rover 3-->
+       <img id="Orange Rover 3" src='/static/Final Orange Rover 3.png' alt="Orange Rover 3" class="rover"/>
+    <!-- Orange Rover 4-->
+       <img id="Orange Rover 4" src='/static/Final Orange Rover 4.png' alt="Orange Rover 4" class="rover"/>
+    <!-- Green Rover 1-->
+       <img id="Green Rover 1" src='/static/Final Green Rover 1.png' alt="Green Rover 1" class="rover"/>
+    <!-- Green Rover 2-->
+       <img id="Green Rover 2" src='/static/Final Green Rover 2.png' alt="Green Rover 2" class="rover"/>
+    <!-- Green Rover 3-->
+       <img id="Green Rover 3" src='/static/Final Green Rover 3.png' alt="Green Rover 3" class="rover"/>
+    <!-- Green Rover 4-->
+       <img id="Green Rover 4" src='/static/Final Green Rover 4.png' alt="Green Rover 4" class="rover"/>
+    <!-- Blue Rover 1-->
+       <img id="Blue Rover 1" src='/static/Final Blue Rover 1.png' alt="Blue Rover 1" class="rover"/>
+    <!-- Blue Rover 2-->
+       <img id="Blue Rover 2" src='/static/Final Blue Rover 2.png' alt="Blue Rover 2" class="rover"/>
+    <!-- Blue Rover 3-->
+       <img id="Blue Rover 3" src='/static/Final Blue Rover 3.png' alt="Blue Rover 3" class="rover"/>
+    <!-- Blue Rover 4-->
+       <img id="Blue Rover 4" src='/static/Final Blue Rover 4.png' alt="Blue Rover 4" class="rover"/>
+    <!-- Black Rover 1-->
+       <img id="Black Rover 1" src='/static/Final Black Rover 1.png' alt="Black Rover 1" class="rover"/>
+    <!-- Black Rover 2-->
+       <img id="Black Rover 2" src='/static/Final Black Rover 2.png' alt="Black Rover 2" class="rover"/>
+    <!-- Black Rover 3-->
+       <img id="Black Rover 3" src='/static/Final Black Rover 3.png' alt="Black Rover 3" class="rover"/>
+    <!-- Black Rover 4-->
+       <img id="Black Rover 4" src='/static/Final Black Rover 4.png' alt="Black Rover 4" class="rover"/>
+    <!-- Red Background -->
+       <img id="Red Background" src='/static/Red Background.png' alt="Red Background" class="etchbackground"/>
+    <!-- Orange Background -->
+       <img id="Orange Background" src='/static/Orange Background.png' alt="Orange Background" class="etchbackground"/>
+    <!-- Green Background -->
+       <img id="Green Background" src='/static/Green Background.png' alt="Green Background" class="etchbackground"/>
+    <!-- Blue Background -->
+       <img id="Blue Background" src='/static/Blue Background.png' alt="Blue Background" class="etchbackground"/>
+    <!-- Black Background -->
+       <img id="Black Background" src='/static/Black Background.png' alt="Black Background" class="etchbackground"/>
+    <!-- Icon Text -->
+       <button id="Icon Text" class="etchword">Icon</button>
+    <!-- Image 1a -->
+       <img id="Image 1a" src="/static/Image1a.png" alt="Automotive" class="etch"/>
+    <!-- Image 1b -->
+       <img id="Image 1b" src="/static/Image1b.png" alt="Consumer Products" class="etch"/>
+    <!-- Image 1c -->
+       <img id="Image 1c" src="/static/Image1c.png" alt="Retail" class="etch"/>
+    <!-- Image 1d -->
+       <img id="Image 1d" src="/static/Image1d.png" alt="Transportation" class="etch"/>
+    <!-- Image 1e -->
+       <img id="Image 1e" src="/static/Image1e.png" alt="Hospitality & Services" class="etch"/>
+    <!-- Image 1f -->
+       <img id="Image 1f" src="/static/Image1f.png" alt="Wholesale & Distribution" class="etch"/>
+    <!-- Image 2a -->
+       <img id="Image 2a" src="/static/Image2a.png" alt="Industrial Products" class="etch"/>
+    <!-- Image 2b -->
+       <img id="Image 2b" src="/static/Image2b.png" alt="Construction" class="etch"/>
+    <!-- Image 2c -->
+       <img id="Image 2c" src="/static/Image2c.png" alt="Power" class="etch"/>
+    <!-- Image 2d -->
+       <img id="Image 2d" src="/static/Image2d.png" alt="Gas & Chemicals" class="etch"/>
+    <!-- Image 2e -->
+       <img id="Image 2e" src="/static/Image2e.png" alt="Oil" class="etch"/>
+    <!-- Image 2f -->
+       <img id="Image 2f" src="/static/Image2f.png" alt="Renewables & Energy" class="etch"/>
+    <!-- Image 2g -->
+       <img id="Image 2g" src="/static/Image2g.png" alt="Utilities" class="etch"/>
+    <!-- Image 2h -->
+       <img id="Image 2h" src="/static/Image2h.png" alt="Mining & Metals" class="etch"/>
+    <!-- Image 3a -->
+       <img id="Image 3a" src="/static/Image3a.png" alt="Banking & Capital Markets" class="etch"/>
+    <!-- Image 3b -->
+       <img id="Image 3b" src="/static/Image3b.png" alt="Insurance" class="etch"/>
+    <!-- Image 3c -->
+       <img id="Image 3c" src="/static/Image3c.png" alt="Investment Management" class="etch"/>
+    <!-- Image 3d -->
+       <img id="Image 3d" src="/static/Image3d.png" alt="Real Estate" class="etch"/>
+    <!-- Image 4a -->
+       <img id="Image 4a" src="/static/Image4a.png" alt="Civil, State & Local Government" class="etch"/>
+    <!-- Image 4b -->
+       <img id="Image 4b" src="/static/Image4b.png" alt="Justice" class="etch"/>
+    <!-- Image 4c -->
+       <img id="Image 4c" src="/static/Image4c.png" alt="Defense & Security" class="etch"/>
+    <!-- Image 4d -->
+       <img id="Image 4d" src="/static/Image4d.png" alt="Health & Human Services" class="etch"/>
+    <!-- Image 4e -->
+       <img id="Image 4e" src="/static/Image4e.png" alt="International Donor Organizations" class="etch"/>
+    <!-- Image 4f -->
+       <img id="Image 4f" src="/static/Image4f.png" alt="Higher Education" class="etch"/>
+    <!-- Image 5a -->
+       <img id="Image 5a" src="/static/Image5a.png" alt="Health Care Providers" class="etch"/>
+    <!-- Image 5b -->
+       <img id="Image 5b" src="/static/Image5b.png" alt="Health Plans" class="etch"/>
+    <!-- Image 5c -->
+       <img id="Image 5c" src="/static/Image5c.png" alt="Life Sciences" class="etch"/>
+    <!-- Image 6a -->
+       <img id="Image 6a" src="/static/Image6a.png" alt="Technology" class="etch"/>
+    <!-- Image 6b -->
+       <img id="Image 6b" src="/static/Image6b.png" alt="Media & Entertainment" class="etch"/>
+    <!-- Image 6c -->
+       <img id="Image 6c" src="/static/Image6c.png" alt="Telecommunications" class="etch"/>  
+    <!-- Sent to Floor -->
+    <form action="/submit" method="post">
+      <input type="hidden" name="color" id="color">
+      <input type="hidden" name="option" id="option">
+      <input type="hidden" name="icon" id="icon">
+      <button id="Submit" class="submit" type="submit">Send Order to Factory Floor</button>
+  </form>
+</body>
+<script>
+   /* Rover & Icon Display */
+   var RedRover1=document.getElementById('Red Rover 1');
+   var RedRover2=document.getElementById('Red Rover 2');
+   var RedRover3=document.getElementById('Red Rover 3');
+   var RedRover4=document.getElementById('Red Rover 4');
+   var OrangeRover1=document.getElementById('Orange Rover 1');
+   var OrangeRover2=document.getElementById('Orange Rover 2');
+   var OrangeRover3=document.getElementById('Orange Rover 3');
+   var OrangeRover4=document.getElementById('Orange Rover 4');
+   var GreenRover1=document.getElementById('Green Rover 1');
+   var GreenRover2=document.getElementById('Green Rover 2');
+   var GreenRover3=document.getElementById('Green Rover 3');
+   var GreenRover4=document.getElementById('Green Rover 4');
+   var BlueRover1=document.getElementById('Blue Rover 1');
+   var BlueRover2=document.getElementById('Blue Rover 2');
+   var BlueRover3=document.getElementById('Blue Rover 3');
+   var BlueRover4=document.getElementById('Blue Rover 4');
+   var BlackRover1=document.getElementById('Black Rover 1');
+   var BlackRover2=document.getElementById('Black Rover 2');
+   var BlackRover3=document.getElementById('Black Rover 3');
+   var BlackRover4=document.getElementById('Black Rover 4');
+   var RedBackground=document.getElementById('Red Background');
+   var OrangeBackground=document.getElementById('Orange Background');
+   var GreenBackground=document.getElementById('Green Background');
+   var BlueBackground=document.getElementById('Blue Background');
+   var BlackBackground=document.getElementById('Black Background');
+   var Image1a=document.getElementById('Image 1a');
+   var Image1b=document.getElementById('Image 1b');
+   var Image1c=document.getElementById('Image 1c');
+   var Image1d=document.getElementById('Image 1d');
+   var Image1e=document.getElementById('Image 1e');
+   var Image1f=document.getElementById('Image 1f');
+   var Image2a=document.getElementById('Image 2a');
+   var Image2b=document.getElementById('Image 2b');
+   var Image2c=document.getElementById('Image 2c');
+   var Image2d=document.getElementById('Image 2d');
+   var Image2e=document.getElementById('Image 2e');
+   var Image2f=document.getElementById('Image 2f');
+   var Image2g=document.getElementById('Image 2g');
+   var Image2h=document.getElementById('Image 2h');
+   var Image3a=document.getElementById('Image 3a');
+   var Image3b=document.getElementById('Image 3b');
+   var Image3c=document.getElementById('Image 3c');
+   var Image3d=document.getElementById('Image 3d');
+   var Image4a=document.getElementById('Image 4a');
+   var Image4b=document.getElementById('Image 4b');
+   var Image4c=document.getElementById('Image 4c');
+   var Image4d=document.getElementById('Image 4d');
+   var Image4e=document.getElementById('Image 4e');
+   var Image4f=document.getElementById('Image 4f');
+   var Image5a=document.getElementById('Image 5a');
+   var Image5b=document.getElementById('Image 5b');
+   var Image5c=document.getElementById('Image 5c');
+   var Image6a=document.getElementById('Image 6a');
+   var Image6b=document.getElementById('Image 6b');
+   var Image6c=document.getElementById('Image 6c');
+   let Color = sessionStorage.getItem('color');
+   let option = sessionStorage.getItem('option');
+   let Icon = sessionStorage.getItem('icon');
+
+   // function sendSessionDataToFlask() {
+   //    const data = {
+   //      color: Color,
+   //      option: option,
+   //      icon: Icon
+   //    };
+
+   //    fetch('/submit', {
+   //      method: 'POST',
+   //      headers: {
+   //        'Content-Type': 'application/json'
+   //      },
+   //      body: JSON.stringify(data)
+   //    })
+   //    .then(response => response.json())
+   //    .then(data => {
+   //      console.log('Success:', data);
+   //    })
+   //    .catch((error) => {
+   //      console.error('Error:', error);
+   //    });
+   //  }
+ 
+   document.getElementById('color').value = Color;
+   document.getElementById('option').value = option;
+   document.getElementById('icon').value = Icon;
+   console.log(Color, option, Icon);
+ 
+   if (Color === 'Red') {
+     RedBackground.style.display = 'block';
+     if (option === '1') {
+       RedRover1.style.display = 'block';
+     } else if (option === '2') {
+       RedRover2.style.display = 'block';
+     } else if (option === '3') {
+       RedRover3.style.display = 'block';
+     } else {
+       RedRover4.style.display = 'block';
+     }
+   } else if (Color === 'Orange') {
+     OrangeBackground.style.display = 'block';
+     if (option === '1') {
+       OrangeRover1.style.display = 'block';
+     } else if (option === '2') {
+       OrangeRover2.style.display = 'block';
+     } else if (option === '3') {
+       OrangeRover3.style.display = 'block';
+     } else {
+       OrangeRover4.style.display = 'block';
+     }
+   } else if (Color === 'Green') {
+     GreenBackground.style.display = 'block';
+     if (option === '1') {
+       GreenRover1.style.display = 'block';
+     } else if (option === '2') {
+       GreenRover2.style.display = 'block';
+     } else if (option === '3') {
+       GreenRover3.style.display = 'block';
+     } else {
+       GreenRover4.style.display = 'block';
+     }
+   } else if (Color === 'Blue') {
+     BlueBackground.style.display = 'block';
+     if (option === '1') {
+       BlueRover1.style.display = 'block';
+     } else if (option === '2') {
+       BlueRover2.style.display = 'block';
+     } else if (option === '3') {
+       BlueRover3.style.display = 'block';
+     } else {
+       BlueRover4.style.display = 'block';
+     }
+   } else {
+     BlackBackground.style.display = 'block';
+     if (option === '1') {
+       BlackRover1.style.display = 'block';
+     } else if (option === '2') {
+       BlackRover2.style.display = 'block';
+     } else if (option === '3') {
+       BlackRover3.style.display = 'block';
+     } else {
+       BlackRover4.style.display = 'block';
+     }
+   }
+ 
+   if (Icon === '1a') {Image1a.style.display = 'block';}
+   else if (Icon === '1b') {Image1b.style.display = 'block';}
+   else if (Icon === '1c') {Image1c.style.display = 'block';}
+   else if (Icon === '1d') {Image1d.style.display = 'block';}
+   else if (Icon === '1e') {Image1e.style.display = 'block';}
+   else if (Icon === '1f') {Image1f.style.display = 'block';}
+   else if (Icon === '2a') {Image2a.style.display = 'block';}
+   else if (Icon === '2b') {Image2b.style.display = 'block';}
+   else if (Icon === '2c') {Image2c.style.display = 'block';}
+   else if (Icon === '2d') {Image2d.style.display = 'block';}
+   else if (Icon === '2e') {Image2e.style.display = 'block';}
+   else if (Icon === '2f') {Image2f.style.display = 'block';}
+   else if (Icon === '2g') {Image2g.style.display = 'block';}
+   else if (Icon === '2h') {Image2h.style.display = 'block';}
+   else if (Icon === '3a') {Image3a.style.display = 'block';}
+   else if (Icon === '3b') {Image3b.style.display = 'block';}
+   else if (Icon === '3c') {Image3c.style.display = 'block';}
+   else if (Icon === '3d') {Image3d.style.display = 'block';}
+   else if (Icon === '4a') {Image4a.style.display = 'block';}
+   else if (Icon === '4b') {Image4b.style.display = 'block';}
+   else if (Icon === '4c') {Image4c.style.display = 'block';}
+   else if (Icon === '4d') {Image4d.style.display = 'block';}
+   else if (Icon === '4e') {Image4e.style.display = 'block';}
+   else if (Icon === '4f') {Image4f.style.display = 'block';}
+   else if (Icon === '5a') {Image5a.style.display = 'block';}
+   else if (Icon === '5b') {Image5b.style.display = 'block';}
+   else if (Icon === '5c') {Image5c.style.display = 'block';}
+   else if (Icon === '6a') {Image6a.style.display = 'block';}
+   else if (Icon === '6b') {Image6b.style.display = 'block';}
+   else {Image6c.style.display = 'block';}
+ 
+   /* Transitions */
+   window.onload = () => {
+       const transition_el = document.querySelector('.transition');
+ 
+       setTimeout( () => {
+         transition_el.classList.remove('is-active');
+       }, 10);
+   }
+ </script>
+</html>

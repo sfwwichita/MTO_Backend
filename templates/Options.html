@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Options</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+    body {
+      background-image: url('../static/Table Background.png');
+      background-color: black;
+      background-attachment:fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .pointer {
+      height: 6.25%;
+      position: absolute;
+      left: 21.9%;
+      top: 58.5%;
+      display: block;
+      z-index: 1;
+    }
+    .check1 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 49%;
+      display: block;
+      z-index: 1;
+    }
+    .check2 {
+      height: 2.7778%;
+      position: absolute;
+      left: 21.25%;
+      top: 54.5%;
+      display: block;
+      z-index: 1;
+    }
+    .next {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 20.922%;
+      z-index: 1;
+    }
+    .back {
+      height: 5%; 
+      width: 2.03125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.756%;
+      left: 17.40625%;
+      z-index: 1;
+    }
+    .home {
+      height: 5.5556%;
+      width: 3.125%;
+      position: absolute;
+      background-color: transparent;
+      border-color: transparent;
+      top: 91.417%;
+      left: 1.9375%;
+      z-index: 1;
+    }
+    .rover {
+      height: 55.556%;
+      position: absolute;
+      left: 54%;
+      top: 40%;
+      z-index: 0;
+      display: none;
+    }
+    .unselect {
+      height: 5.5556%;
+      width: 19.531%;
+      border-radius: 10.8%/67.5%;
+      background-color: black;
+      border-color: white;
+      z-index: 1;
+      color: white;
+      display: block;
+    }
+    .select {
+      height: 5.5556%;
+      width: 19.531%;
+      border-radius: 10.8%/67.5%;
+      background-color: white;
+      border-color: white;
+      z-index: 1;
+      color: black;
+      display: block;
+    }
+    .pos1 {
+      position: absolute;
+      top: 42.667%;
+      left: 28.906%;
+    }
+    .pos2 {
+        position: absolute;
+        top: 51%;
+        left: 28.906%;
+    }
+    .pos3 {
+      position: absolute;
+      top: 59.333%;
+      left: 28.906%;
+    }
+    .pos4 {
+      position: absolute;
+      top: 67.667%;
+      left: 28.906%;
+    }
+    /* Transitions */
+    .transition-1 {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      z-index: 101;
+      background-color: black;
+      opacity: 0;
+      pointer-events: none;
+      transition: 0.01s ease-out;
+    } 
+
+    .transition-1.is-active {
+      opacity: 1;
+      pointer-events: all;
+    } 
+  </style>
+</head>
+<body>
+  <div class="transition transition-1 is-active"></div>
+  <!-- Pointer -->
+     <img id="Pointer" src='../static/Pointer.png' alt="Pointer" class="pointer" />
+  <!-- Check1 -->
+     <img id="Check1" src='../static/Check.png' alt="Check1" class="check1" />
+  <!-- Check2 -->
+     <img id="Check2" src='../static/Check.png' alt="Check2" class="check2" />
+  <!-- Next Page Button -->
+     <a href="http://127.0.0.1:5000" class="next"></a>
+  <!-- Back Page Button -->
+     <a href="IconChoice.html" class="back"></a>
+  <!-- Home Page Button -->
+     <button id="Home Page" onclick="document.location='MTOdesign.html'" class="home"></button>
+  <!-- Option 1 -->
+     <button id="Option 1" class="unselect pos1">Fan</button>
+  <!-- Option 2 -->
+     <button id="Option 2" class="unselect pos2">Speaker</button>
+  <!-- Option 3 -->
+     <button id="Option 3" class="unselect pos3">MPN Tansistor</button>
+  <!-- Option 4 -->
+     <button id="Option 4" class="unselect pos4">3D Snaps & Grid Plate</button>
+  <!-- Red Rover -->
+     <img id="Red Rover" src='../static/Rover Iso View with Parts Generic Kit - Red.png' alt="Red Rover" class="rover"/>
+  <!-- Orange Rover -->
+     <img id="Orange Rover" src='../static/Rover Iso View with Parts Generic Kit - Orange.png' alt="Orange Rover" class="rover"/>
+  <!-- Green Rover -->
+     <img id="Green Rover" src='../static/Rover Iso View with Parts Generic Kit - Green.png' alt="Green Rover" class="rover"/>
+  <!-- Blue Rover -->
+     <img id="Blue Rover" src='../static/Rover Iso View with Parts Generic Kit - Blue.png' alt="Blue Rover" class="rover"/>
+  <!-- Black Rover -->
+     <img id="Black Rover" src='../static/Rover Iso View with Parts Generic Kit - Black.png' alt="Black Rover" class="rover"/>
+  
+
+</body>
+
+<script>
+  /* Rover Color Display */
+  var RedRover=document.getElementById('Red Rover');
+  var OrangeRover=document.getElementById('Orange Rover');
+  var GreenRover=document.getElementById('Green Rover');
+  var BlueRover=document.getElementById('Blue Rover');
+  var BlackRover=document.getElementById('Black Rover');
+  let Color = sessionStorage.getItem('color');
+     if (Color === 'Red') {
+        RedRover.style.display = 'block';
+     } else if (Color === "Orange") {
+        OrangeRover.style.display = 'block';
+     } else if (Color === "Green") {
+        GreenRover.style.display = 'block';
+     } else if (Color === "Blue") {
+        BlueRover.style.display = 'block';
+     } else {
+        BlackRover.style.display = 'block';
+     }
+  sessionStorage.setItem('option','none');
+  var Option1=document.getElementById('Option 1');
+  var Option2=document.getElementById('Option 2');
+  var Option3=document.getElementById('Option 3');
+  var Option4=document.getElementById('Option 4');
+  Option1.onclick = function () {
+     [Option1, Option2, Option3, Option4].forEach(i=>{i.classList.replace('select','unselect');});
+     Option1.className = "select pos1";
+     sessionStorage.setItem('option','1');
+  }
+  Option2.onclick = function () {
+     [Option1, Option2, Option3, Option4].forEach(i=>{i.classList.replace('select','unselect');});
+     Option2.className = "select pos2";
+     sessionStorage.setItem('option','2');
+  }
+  Option3.onclick = function () {
+     [Option1, Option2, Option3, Option4].forEach(i=>{i.classList.replace('select','unselect');});
+     Option3.className = "select pos3";
+     sessionStorage.setItem('option','3');
+  }
+  Option4.onclick = function () {
+     [Option1, Option2, Option3, Option4].forEach(i=>{i.classList.replace('select','unselect');});
+     Option4.className = "select pos4";
+     sessionStorage.setItem('option','4');
+  }
+   let option = sessionStorage.getItem('option');
+   let Icon = sessionStorage.getItem('icon');
+
+  function sendSessionDataToFlask() {let Color = sessionStorage.getItem('color');
+
+      const data = {
+        color: Color,
+        option: option,
+        icon: Icon
+      };
+
+      fetch('/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Success:', data);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
+    }
+    
+    document.querySelector('.next').addEventListener('click', sendSessionDataToFlask);
+  /* Transitions */
+  window.onload = () => {
+      const transition_el = document.querySelector('.transition');
+
+      setTimeout( () => {
+        transition_el.classList.remove('is-active');
+      }, 10);
+  }
+</script>
+</html>

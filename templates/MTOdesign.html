@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MTO Design</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" >
+  <style>
+    body {
+    background-image: url('../static/Table Background.png');
+    background-color: black;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+   .roverOG {
+    height: 69.444%;
+    position: absolute;
+    left: 46%;
+    top: 20%;
+    z-index: 0;
+    display: block;
+  }
+  .rover {
+    height: 69.444%;
+    position: absolute;
+    left: 46%;
+    top: 20%;
+    z-index: 0;
+    display: none;
+  }
+  .unselect {
+    height: 4.7222%;
+    width: 11.406%;
+    border-radius: 13.699%/58.824%;
+    background-color: black;
+    border-color: white;
+    z-index: 0;
+    color: white;
+    display: block;
+  }
+  .select {
+    height: 4.7222%;
+    width: 11.406%;
+    border-radius: 13.699%/58.824%;
+    background-color: white;
+    border-color: white;
+    z-index: 0;
+    color: black;
+    display: block;
+  }
+  .red {
+    position: absolute;
+    top: 38.444%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .orange {
+    position: absolute;
+    top: 44.417%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .yellow {
+    position: absolute;
+    top: 50.389%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .green {
+    position: absolute;
+    top: 56.361%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .blue {
+    position: absolute;
+    top: 62.611%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .purple {
+    position: absolute;
+    top: 68.583%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .black {
+    position: absolute;
+    top: 74.556%;
+    left: 27.344%;
+    z-index: 0;
+  }
+  .oos {
+    height: 13.889%;
+    position: absolute;
+    left: 54%;
+    top: 45%;
+    display: none;
+    z-index: 1;
+  }
+  .pointer {
+    height: 6.25%;
+    position: absolute;
+    left: 21.9%;
+    top: 47.25%;
+    display: block;
+    z-index: 1;
+  }
+  .next {
+    height: 5%; 
+    width: 2.03125%;
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    top: 91.756%;
+    left: 20.922%;
+    z-index: 1;
+    display: none;
+  }
+  .back {
+    height: 5%; 
+    width: 2.03125%;
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    top: 91.756%;
+    left: 17.40625%;
+    z-index: 1;
+  }
+  .home {
+    height: 5.5556%;
+    width: 3.125%;
+    position: absolute;
+    background-color: transparent;
+    border-color: transparent;
+    top: 91.417%;
+    left: 1.9375%;
+    z-index: 1;
+  }
+  .colordot {
+    height: 2.7778%;
+    width: 1.5625%;
+    border-radius: 50%;
+    display: block;
+  }
+  .reddot {
+    position: absolute;
+    top: 39.444%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .orangedot {
+    position: absolute;
+    top: 45.417%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .yellowdot {
+    position: absolute;
+    top: 51.389%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .greendot {
+    position: absolute;
+    top: 57.361%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .bluedot {
+    position: absolute;
+    top: 63.611%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .purpledot {
+    position: absolute;
+    top: 69.583%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  .blackdot {
+    position: absolute;
+    top: 75.556%;
+    left: 28.344%;
+    z-index: 1;
+  }
+  /* Transitions */
+  .transition-1 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 101;
+    background-color: black;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.01s ease-out;
+  }
+
+  .transition-1.is-active {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  </style>
+</head>
+<body>
+
+  <div class="transition transition-1 is-active"></div>
+
+  <!-- Grey Rover -->
+    <img id="Grey Rover" src='../static/Rover Iso View Generic Kit w Parts (2).png' alt="Grey Rover" class="roverOG"/> 
+  <!-- Red Rover -->
+    <img id="Red Rover" src='../static/Rover Iso View Generic Kit w Parts Red.png' alt="Red Rover" class="rover"/>
+  <!-- Orange Rover -->
+    <img id="Orange Rover" src='../static/Rover Iso View Generic Kit w Parts Orange.png' alt="Orange Rover" class="rover"/>
+  <!-- Yellow Rover -->
+    <img id="Yellow Rover" src='../static/Rover Iso View Generic Kit w Parts Yellow.png' alt="Yellow Rover" class="rover"/>
+  <!-- Green Rover -->
+    <img id="Green Rover" src='../static/Rover Iso View Generic Kit w Parts Green.png' alt="Green Rover" class="rover"/>
+  <!-- Blue Rover -->
+    <img id="Blue Rover" src='../static/Rover Iso View Generic Kit w Parts Blue.png' alt="Blue Rover" class="rover"/>
+  <!-- Purple Rover -->
+    <img id="Purple Rover" src='../static/Rover Iso View Generic Kit w Parts Purple.png' alt="Purple Rover" class="rover"/>
+  <!-- Black Rover -->
+    <img id="Black Rover" src='../static/Rover Iso View Generic Kit w Parts Black.png' alt="Black Rover" class="rover"/>
+  <!-- Red Dot -->
+    <img id="Red Dot" src="../static/Red Background.png" alt="Red Dot" class="colordot reddot"/>
+  <!-- Orange Dot -->
+   <img id="Orange Dot" src="../static/Orange Background.png" alt="Orange Dot" class="colordot orangedot"/>
+  <!-- Yellow Dot -->
+    <img id="Yellow Dot" src="../static/Yellow Background.png" alt="Yellow Dot" class="colordot yellowdot"/>
+  <!-- Green Dot -->
+     <img id="Green Dot" src="../static/Green Background.png" alt="Green Dot" class="colordot greendot"/>
+  <!-- Blue Dot -->
+    <img id="Blue Dot" src="../static/Blue Background.png" alt="Blue Dot" class="colordot bluedot"/>
+  <!-- Purple Dot -->
+     <img id="Purple Dot" src="../static/Purple Background.png" alt="Purple Dot" class="colordot purpledot"/>
+  <!-- Black Dot -->
+    <img id="Black Dot" src="../static/Black Background.png" alt="Black Dot" class="colordot blackdot"/>
+  <!-- Out of Stock -->
+    <img id="Out Of Stock" src='../static/OutOfStock.png' alt="Out of Stock" class="oos" />
+  <!-- Pointer -->
+    <img id="Pointer" src='../static/Pointer.png' alt="Pointer" class="pointer" />
+  <!-- Button for Red-->
+    <button id="Red Button" class="unselect red">Red</button>
+  <!-- Button for Orange-->
+    <button id="Orange Button" class="unselect orange">Orange</button>
+  <!-- Button for Yellow-->
+    <button id="Yellow Button" class="unselect yellow">Yellow</button>
+  <!-- Button for Green-->
+    <button id="Green Button" class="unselect green">Green</button>
+  <!-- Button for Blue-->
+    <button id="Blue Button" class="unselect blue">Blue</button>
+  <!-- Button for Purple-->
+    <button id="Purple Button" class="unselect purple">Purple</button>
+  <!-- Button for Black-->
+    <button id="Black Button" class="unselect black">Black</button>
+  <!-- Next Page Button-->
+    <a id="Next Page" href="IconChoice.html" class="next"></a>
+  <!-- Back Page Button-->
+    <button id="Back Page" onclick="document.location='MTOdesign.html'" class="back"></button>
+  <!-- Home Page Button-->
+    <button id="Home Page" onclick="document.location='MTOdesign.html'" class="home"></button>
+ 
+    
+  <script>
+    var RedButton=document.getElementById('Red Button');
+    var GreyRover=document.getElementById('Grey Rover');
+    var RedRover=document.getElementById('Red Rover');
+    var OrangeRover=document.getElementById('Orange Rover');
+    var YellowRover=document.getElementById('Yellow Rover');
+    var GreenRover=document.getElementById('Green Rover');
+    var BlueRover=document.getElementById('Blue Rover');
+    var PurpleRover=document.getElementById('Purple Rover');
+    var BlackRover=document.getElementById('Black Rover');
+    var OutOfStock=document.getElementById('Out Of Stock');
+    var Next=document.getElementById('Next Page');
+    var OrangeButton=document.getElementById('Orange Button');
+    var YellowButton=document.getElementById('Yellow Button');
+    var GreenButton=document.getElementById('Green Button');
+    var BlueButton=document.getElementById('Blue Button');
+    var PurpleButton=document.getElementById('Purple Button');
+    var BlackButton=document.getElementById('Black Button');
+    sessionStorage.setItem('color', 'none');
+    RedButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      RedButton.classList.replace('unselect','select');
+      RedRover.style.display = 'block';
+      Next.style.display = 'block';
+      sessionStorage.setItem('color','Red');
+    }
+    OrangeButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      OrangeButton.classList.replace('unselect','select');
+      OrangeRover.style.display = 'block';
+      Next.style.display = 'block';
+      sessionStorage.setItem('color','Orange');
+    }
+    YellowButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      YellowButton.classList.replace('unselect','select');
+      YellowRover.style.display = 'block';
+      OutOfStock.style.display = 'block';
+      Next.style.display = 'none';
+    }
+    GreenButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      GreenButton.classList.replace('unselect','select');
+      GreenRover.style.display = 'block';
+      Next.style.display = 'block';
+      sessionStorage.setItem('color','Green');
+    }
+    BlueButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      BlueButton.classList.replace('unselect','select');
+      BlueRover.style.display = 'block';
+      Next.style.display = 'block';
+      sessionStorage.setItem('color','Blue');
+    }
+    PurpleButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      PurpleButton.classList.replace('unselect','select');
+      PurpleRover.style.display = 'block';
+      OutOfStock.style.display = 'block';
+      Next.style.display = 'none';
+    }
+    BlackButton.onclick= function(){
+      [OutOfStock, GreyRover, RedRover, OrangeRover, YellowRover, GreenRover, BlueRover, PurpleRover, BlackRover].forEach(i=>{i.style.display='none';});
+      [RedButton, OrangeButton, YellowButton, GreenButton, BlueButton, PurpleButton, BlackButton].forEach(i=>{i.classList.replace('select','unselect');});
+      BlackButton.classList.replace('unselect','select');
+      BlackRover.style.display = 'block';
+      Next.style.display = 'block';
+      sessionStorage.setItem('color','Black');
+    }
+
+    /* Transitions */
+    window.onload = () => {
+      const transition_el = document.querySelector('.transition');
+
+      setTimeout( () => {
+        transition_el.classList.remove('is-active');
+      }, 10);
+    }
+
+    let Color = sessionStorage.getItem('color');
+    console.log(Color);
+    
+  </script>
+
+</body>
+</html>
